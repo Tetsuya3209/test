@@ -1,0 +1,15 @@
+.form-box {
+    display: flex;
+    border: 2px solid #c0c0c0;
+    width: 400px;
+}
+
+.form-input {
+    border: none;
+    width: 100%;
+}
+
+.form-button {
+    background-color: white;
+    border: none;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>シナリオ①「野菜」</title>
+        <link rel="stylesheet" type="text/css" href="drug1.css">
+    </head>
+    <body>
+      <section>
+          <form action="#" id="form">
+              <input type="text" name="word">
+              <input type="submit" value="検索">
+          </form>
+          <p id="output"></p>
+      </section>
+
+      <script>
+          document.getElementById('form').onsubmit = function() {
+              var search = document.getElementById('form').word.value;
+              document.getElementById('output').textContent = '「' + search + '」の検索中';
+                return false;
+          }
+      </script>
+
+    </body>
+</html>

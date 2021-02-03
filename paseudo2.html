@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>疑似体験</title>
+        <link rel="stylesheet" type="text/css" href="paseudo.css">
+    </head>
+    <body>
+
+        <div class="flex_test-box">
+            <div class="flex_test-item">
+                <h1>SNS検索画面</h1>
+                <p>下記のフォームには事前に隠語ページで学んだ隠語を入れて検索してください。</p>
+                <hr>
+                    <section>
+                        <form action="#" id="form">
+                            <input type="text" name="word">
+                            <input type="submit" value="検索">
+                        </form>
+                    </section>
+                <div id="tweet1"></div>
+                <div id="tweet2"></div>
+                <div id="tweet3"></div>
+                <div id="tweet4"></div>
+                <div id="tweet5"></div>
+                <div id="tweet6"></div>
+                <div id="tweet7"></div>
+               
+            </div>
+
+            <div id="disp" class="flex_test-item">
+                <h1>通報用画面</h1>
+                <hr>
+                <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span></p>
+                <p>通報ページは皆様からインターネット上の違法・有害情報を通報していただき、<br>
+                   ガイドライン上に照らして判断した上で、各都道府県警に情報提供するとともに、<br>
+                   サイト管理者等に送信防止措置を依頼します。
+                </p>
+                
+                <form>
+                    <button type="button" class="choice1" onclick="obscene()">わいせつ・アダルト</button>
+                    <button type="button" class="choice2" onclick="drug()">薬物・ドラッグ</button>
+                    <button type="button" class="choice3" onclick="encounter()">出会い系・売春</button>
+                    <button type="button" class="choice4" onclick="porn()">児童ポルノ</button>
+
+                </form>
+                <div id="obscene" style="display:none">
+                    <h2>カテゴリ：わいせつ・アダルト</h2>
+                    <p>陰部が明らかに確認できる無修正画像やそれに近い画像が掲載されていることをいいます<br>
+                       （ただし、学術・医学・芸術目的で掲載されている場合は含みません）
+                    </p>
+                <fieldset>
+                    <p>・情報が掲載されているwebページのURL、又はアプリの名称</p>
+                    <h3>どこで見つけましたか？<span> (必須)</span></h3>
+                    <p><input type="radio" name="searchtype" value="1" onclick="hyoji1()">ウェブサイト</p>
+                    <p><input type="radio" name="searchtype" value="2" onclick="hyoji2()">アプリ</p>
+                    <p><input type="radio" name="searchtype" value="3" onclick="hihyoji()">その他</p>
+
+                    <div id="web1" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
+                    <div id="app1" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
+                    <h3>・詳細情報 (最大400文字)</h3>
+                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <hr>
+                    <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
+                        <p>
+                            メールアドレス：<input type="text" name="pmail"><br>
+                            氏名：<input type="text" name="pname"><br>
+                            所属：<input type="text" name="paffiliation"><br>
+                        </p>
+                        <hr>
+                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
+                                                       ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
+                                                       ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
+                        </p>
+                </fieldset>
+                </div>
+
+                <div id="drug" style="display:none">
+                    <h2>カテゴリ：薬物・ドラッグ</h2>
+                    <p>違法な薬物の使用をあおったり唆すことや、<br>
+                       販売を目的とした書き込み（広告）などをいいます。
+                    </p>
+                <fieldset>
+                    <p>・情報が掲載されているwebページのURL、又はアプリの名称</p>
+                    <h3>どこで見つけましたか？<span> (必須)</span></h3>
+                    <p><input type="radio" name="searchtype" value="4" onclick="hyoji3()">ウェブサイト</p>
+                    <p><input type="radio" name="searchtype" value="5" onclick="hyoji4()">アプリ</p>
+                    <p><input type="radio" name="searchtype" value="6" onclick="hihyoji1()">その他</p>
+
+                    <div id="web2" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
+                    <div id="app2" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
+                    <h3>・詳細情報 (最大400文字)</h3>
+                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <hr>
+                    <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
+                        <p>
+                            メールアドレス：<input type="text" name="pmail"><br>
+                            氏名：<input type="text" name="pname"><br>
+                            所属：<input type="text" name="paffiliation"><br>
+                        </p>
+                        <hr>
+                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
+                                                       ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
+                                                       ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
+                        </p>
+                </fieldset>
+                </div>
+
+                <div id="encounter" style="display:none">
+                    <h2>カテゴリ：出会い系・売春</h2>
+                    <p>金銭を伴った性行為の相手方となるような呼び掛けや、<br>
+                       出会い系サイトで児童（18歳未満の者）に対して性交や援助交際などを呼び掛けること、<br>
+                       又は、児童本人から呼び掛けることをいいます。
+                    </p>
+                <fieldset>
+                    <p>・情報が掲載されているwebページのURL、又はアプリの名称</p>
+                    <h3>どこで見つけましたか？<span> (必須)</span></h3>
+                    <p><input type="radio" name="searchtype" value="7" onclick="hyoji5()">ウェブサイト</p>
+                    <p><input type="radio" name="searchtype" value="8" onclick="hyoji6()">アプリ</p>
+                    <p><input type="radio" name="searchtype" value="9" onclick="hihyoji2()">その他</p>
+
+                    <div id="web3" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
+                    <div id="app3" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
+                    <h3>・詳細情報 (最大400文字)</h3>
+                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <hr>
+                    <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
+                        <p>
+                            メールアドレス：<input type="text" name="pmail"><br>
+                            氏名：<input type="text" name="pname"><br>
+                            所属：<input type="text" name="paffiliation"><br>
+                        </p>
+                        <hr>
+                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
+                                                       ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
+                                                       ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
+                        </p>
+                </fieldset>
+                </div>
+
+                <div id="porn" style="display:none">
+                    <h2>カテゴリ：児童ポルノ</h2>
+                    <p>児童（18歳未満で実在する者）を対象にした性交や性交に類似する行為、<br>
+                       又は、裸（一部の衣服を着ている場合も含みます）の画像をいいます。<br>
+                    </p>
+                <fieldset>
+                    <p>・情報が掲載されているwebページのURL、又はアプリの名称</p>
+                    <h3>どこで見つけましたか？<span> (必須)</span></h3>
+                    <p><input type="radio" name="searchtype" value="10" onclick="hyoji7()">ウェブサイト</p>
+                    <p><input type="radio" name="searchtype" value="11" onclick="hyoji8()">アプリ</p>
+                    <p><input type="radio" name="searchtype" value="12" onclick="hihyoji3()">その他</p>
+
+                    <div id="web" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
+                    <div id="app" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
+                    <h3>・詳細情報 (最大400文字)</h3>
+                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <hr>
+                    <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
+                        <p>
+                            メールアドレス：<input type="text" name="pmail"><br>
+                            氏名：<input type="text" name="pname"><br>
+                            所属：<input type="text" name="paffiliation"><br>
+                        </p>
+                        <hr>
+                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
+                                                       ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
+                                                       ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
+                        </p>
+                </fieldset>
+                </div>
+        </div>
+        </div>
+
+        <script>
+
+        function heart1click() {
+
+            document.getElementById('heart1').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+        function heart2click() {
+
+            document.getElementById('heart2').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+        function heart3click() {
+
+            document.getElementById('heart3').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+        function heart4click() {
+
+            document.getElementById('heart4').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+        function heart5click() {
+
+            document.getElementById('heart5').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+        function heart6click() {
+
+            document.getElementById('heart6').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+        function heart7click() {
+
+            document.getElementById('heart7').style.background='#FF69B4';
+            alert("注意：いいねが押された場合、相手にアカウント情報が通知される可能性があります")
+
+        }
+
+
+
+        function ritu1click() {
+            document.getElementById('ritu1').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+        function ritu2click() {
+            document.getElementById('ritu2').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+        function ritu3click() {
+            document.getElementById('ritu3').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+        function ritu4click() {
+            document.getElementById('ritu4').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+        function ritu5click() {
+            document.getElementById('ritu5').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+        function ritu6click() {
+            document.getElementById('ritu6').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+        function ritu7click() {
+            document.getElementById('ritu7').style.background='#ADFF2F';
+            alert("注意：リツイートが押された場合、相手にアカウント情報が通知される可能性があります")
+        }
+
+
+
+            document.getElementById('form').onsubmit = function() {
+                var search = document.getElementById('form').word.value;
+
+                if (search ==='野菜' ) {
+
+                    document.getElementById("tweet1").innerHTML ="<p>コウノトリ @TKTLGNaFhmmZS7y<br>セール中！<br>配達<br>ゴリラグルー＃４<br>￥６０００円<br>Tele→" + '<a href=javascript:alert("警告：このリンクは安全でなく個人情報が搾取される可能性があります。")>hotocoffee03</a>' + "<p> #野菜 #手押し #配達<br></p>" + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML ="<p>ダイエット垢 @thjrybvotnn<br>野菜おいしー<br>減量中なので野菜生活です((笑))<br>" + '<img src="yasaiitame.jpg" width="300" height="150">' + "</p>" + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML ="<p>Green @Green55820432<br>レギュ 5/27000<br>ホワイト 5/37000<br>多種あります！<br>100以上割引あります！<br>テレ" + '<a href=javascript:alert("警告：このリンクは安全でなく個人情報が搾取される可能性があります。")>tenkan831</a>' + "<p>#野菜 #大阪 #手押し #野菜手押し<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML ="<p>FROG氏 @LDSP333<br>おまたせいたしました🥦<br>第２回の野菜給付企画行います🎉<br>スイス産 purple Haze<br>7名の方に1gずつプレゼント🎁<br>締め切りは11月20日です<br>#野菜 #郵送 #野菜郵送 #全国郵送<br>"+ '<img src="drug1.jpg" width="250" height="150">' +"</p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML ="<p>はなちゃむ @hanacham_0419<br>夜ごはんは牛丼、あれ今日野菜は？？？<br></p>" + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet6").innerHTML ="<p>Kennethvick @Kennethvick<br>ハワイアンクッシュ<br>新しく入荷しました！<br>1/7000<br>2/6500<br>3/6000<br>!!指定場所神戸!!<br>写真などはテレまで！<br>" + '<a href=javascript:alert("警告：このリンクは安全でなく個人情報が搾取される可能性があります。")>t.me/mnichealcave</a>' + '<img src="drug3.jpg" width="200" height="150">' + "<p>#神戸手押し #兵庫手押し #西宮手押し #野菜手押し<br>#尼崎手押し #姫路手押し #宝塚手押し #手押し<br></p>"  + '<button id="heart6" type="submit" onClick="heart6click()"><img src="hart.png" width="20" height="20"></button><button id="ritu6" type="submit" onClick="ritu6click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet7").innerHTML ="<p>midoring @dsodcnfxi93<br>初めまして＆皆様よろしくお願いしますのプレゼント企画<br>・フォローRTファボで参加<br>・当選は１週間後発表<br>・野菜、ピュア、紙、各１名<br>これがいいって人はコメントで！<br>是非全国の皆様ご参加ください。<br>千葉 野菜 手押し<br>" + '<img src="drug2.jpg" width="300" height="150">' + "</p>"  + '<button id="heart7" type="submit" onClick="heart7click()"><img src="hart.png" width="20" height="20"></button><button id="ritu7" type="submit" onClick="ritu7click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search === 'ジョイント') {
+
+                    document.getElementById("tweet1").innerHTML ="<p>イヌ @G89DrN8D8UFDgk<br>ホワイトウィドー<br>3g ￥23000<br>5g ￥35000<br>10g ￥65000<br>20～50g-交渉次第<br>都内手押し　野菜手押し　野菜配達<br>" + '<img src="drug4.jpg" width="300" height="150">' + "</p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML ="<p>yukinyashin @yukinyashin<br>モズのコルクマット☆br>おしゃれカッコいいインテリアを崩したくない人向けジョイントマット<br></p>" + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML ="<p>あさか @gvk_sg<br>営業してます<br>サワーディーゼル<br>1g6500<br>ぱちぱちです<br>ジョイントでも可能！<br>詳細はテレグラムまで<br>「asaka009」<br>ご連絡お待ちしてます！<br>" + '<img src="drug5.png" width="300" height="150">' + "<p>#大阪手押し #野菜手押し<br>#野菜 #手押し #大阪<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML ="<p>裏庭お野菜最前線 @PZqqtc<br>お疲れ様です！<br>ジョイント売りのみです<br>ブルーチーズ<br>１~２５００円<br>３～６０００円<br>５～９０００円<br>八尾市指定場所になります<br>正直この値段しか下げれ無いです<br>tel" + '<a href=javascript:alert("警告：このリンクは安全でなく個人情報が搾取される可能性があります。")>@uraniwa0831</a>' + "<p>#大阪手押し #野菜手押し #八尾手押し #裏庭手押し<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML ="<p>思うつぼ @k2c_omoutubo<br>本体＋武器<br>アサルトライフル、ハンドガン、マガジン、ナイフ<br>あとはジョイントとパイロットのはバックパックが<br></p>" + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet6").innerHTML ="<p>タバサ @Aj8lxc5Gllr6Pun<br>[ビックバズーカー]<br>1個 6500円 5個 6000円<br>[ジョイント]<br>1本 3000円 5本2500円<br>" + '<img src="QR_043446.jpg" width="200" height="200">' + "<p>#大阪手押し #堺手押し #野菜手押し #指定場所<br></p>"  + '<button id="heart6" type="submit" onClick="heart6click()"><img src="hart.png" width="20" height="20"></button><button id="ritu6" type="submit" onClick="ritu6click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet7").innerHTML ="<p>ミニオン @minion420<br>営業中残り２つです<br>指定場所北花田付近指定<br>極上インポート専門店<br>写真テレgでお願いします<br>徐ワイトウィドウ<br>極上野菜🥦<br>1g8000 4g30000 大口（要相談）<br>極上野菜ジョイント🥦<br>1j.3000 4j.10000 大口（要相談）<br>#大阪手押し<br>テレg→minion420weed<br></p>"  + '<button id="heart7" type="submit" onClick="heart7click()"><img src="hart.png" width="20" height="20"></button><button id="ritu7" type="submit" onClick="ritu7click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search === 'パパ活' ) {
+
+                    document.getElementById("tweet1").innerHTML ="<p>ゆう @aoitorinomigue<br>今から梅田で会える人いませんか？<br>大阪には地元から遊びに来てます！<br>友達は彼氏のところに泊まってるので１人で暇してます！<br>パパ活 大阪 梅田<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML ="<p>みるく @zzz_nemui<br>大人あり月50くらいくれるパパいませんか？<br>パパ活 都内<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML ="<p>まいちゃん @e4DGICWb8F<br>大阪 パパ活 p活<br>初めてなので本当に何もわかりませんがお金ほしいので始めました<br>明日夜会える方良かったらDMください<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML ="<p>すず @suzupi_a<br>今日の夜から！木曜日まで募集します<br>変な人はいらないです<br>#大阪 #梅田<br>えん 円 パパ活 大人 サポ<br>" + '<img src="qr2.png" width="200" height="200">' + "</p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML ="<p>りん @G757slgBKyvfKIG<br>これからお茶でもしませんか？<br>ｄｍください<br>パパ活都内 さぽ p活<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet6").innerHTML ="<p>猫味 @nekoazi777<br>パパ活でなんらかの被害に遭ったやつらはバカ活として認定します。<br></p>" + '<button id="heart6" type="submit" onClick="heart6click()"><img src="hart.png" width="20" height="20"></button><button id="ritu6" type="submit" onClick="ritu6click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet7").innerHTML ="<p>橋本 @hashimoto_53459<br>パパ活なんていう言葉生み出した世の中の狂った奴らよく見とけよ。<br>女共も被害者ヅラしてんじゃねーよ。<br>ただのエンコ―だし、売春だからな。<br></p>" + '<button id="heart7" type="submit" onClick="heart7click()"><img src="hart.png" width="20" height="20"></button><button id="ritu7" type="submit" onClick="ritu7click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search === '円') {
+
+                    document.getElementById("tweet1").innerHTML ="<p>ひな @hina_sapo<br>急ですが、今日会える人いませんか？<br>梅田でお願いします<br>大阪 えん 円 サポ 梅田<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML ="<p>円華 @chinatsu93w<br>そうしたら安心だよねｗｗｗ<be>キャプボ起動するかお試しレンタルｗ<br></p>" + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>"
+
+                    document.getElementById("tweet3").innerHTML ="<p>カレン🎀 @karine_g19<br>あった人はわかってると思うんですけど、、<br>冷やかしとかではないです<br>まだ仙台には帰れません<br>後１人だけ募集してます<br>理解してもらえる方はDMください<br>#円 #裏アカ女子 #梅田<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+                
+                    document.getElementById("tweet4").innerHTML ="<p>こっとん @Nr4X5sGXPDczPcO<br>ユーロ円…ノミ程度の動きで暇なので、、、<br>先日初めて行った店のモーニング写真をペタリ<br></p>" + '<img src="morning.jpg" width="300" height="250">' + "</p>" + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>"
+                    
+                    document.getElementById("tweet5").innerHTML ="<p>ナオキ @X1j7SoA01NqyaV<br>大宮に暇なお姉さんいないかなぁ～<br>プチ 円 サポ<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet6").innerHTML ="<p>ちゃんまゆ @_s_k_t_love_<br>円 札幌<br>募集してます<br>DMまで来てください<br></P>"  + '<button id="heart6" type="submit" onClick="heart6click()"><img src="hart.png" width="20" height="20"></button><button id="ritu6" type="submit" onClick="ritu6click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet7").innerHTML ="<p>みき @26mouy4lybNw<br>明日の日中に円です<br>札幌ぽこ<br>すすきのは今怖いからいきませーん<br></p>"  + '<button id="heart7" type="submit" onClick="heart7click()"><img src="hart.png" width="20" height="20"></button><button id="ritu7" type="submit" onClick="ritu7click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search ==='裏アカ' ){
+
+                    document.getElementById("tweet1").innerHTML="<p>あおい @dl4gtSNvhrUxZkd<br>今日から#裏アカ始めます<br>あおい🚺<br>神奈川住みの22歳<br>1人でお出かけするのが大好きで都内各地に行ったり、箱根やみなとみらい、時間があれば夜行で大阪とか行きます！<br>ここでは素の自分を出しつつ、いろんな人と仲良くなりたいです!<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>裏アカ女子 @AimeeMa16358079<br>ラインはったら会えるってガチ？<br>追加して！(笑)オフ/パコまってる♡<br>応募はフォロー＆RTしてくださいね♡<br>出逢い系<br>動画シェア 炉 鍵開け<br>福岡<br>えロ動画<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>＠七瀬の裏アカ @Cixrfgefho<br>逆におもろいやんｗｗｗ<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>ラリ＠愛知裏アカ男子 @ffgrvsdcwe<br>おはよー<br>最近起きるの昼<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>ゆうこ @RoseliaCain2<br>こっそりAVばっか見てまーす♫<br>いっぱい声出したいなぁー<br>出会いたい人は、<br>固定ツイート見てね♪<br>💛裏アカ女子<br>💛裏アカ男子と繋がりたい<br>💛オフパコ募集<br>💛ドM<br>💛彼氏募集<br>💛セフ募集<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search ==="裏アカjc") {
+
+                    document.getElementById("tweet1").innerHTML="<p>ロリ娘 @lyndsay_timms<br>裏アカJKでも裏アカJCでもないよ、<br>メンヘラ女子でも、ヤンデレ女子でもないよ<br>ただの、ちょっとえっちな女の子です（笑）<br>興味ある人、DMお待ちしてます！<br>#pオフパコ募集<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>ゆー🎀 @Yuuu_by<br>見たいんでしょ？？（笑）<br>これでこーふんしてください。<br>#裏アカjc #裏アカ女子</p>" + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>～(^^♪ @SzZoc<br>らぶりつとフォロワーさんくれ<br>えちえちな学生なうです<br>#裏アカ女子 #裏アカjc #裏アカ男子と繋がりたい<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>●梨乃● @rino___1007<br>かかお出来る人…？<br>らぶりつでオカズ配ります（笑）<br>(やってみたかっただけ)<br>#裏アカｊｃ #いいねでDM #らぶりつください<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>のん＠プロフ必読 @noooooo<br>お風呂前です🛀<br>#裏アカjc #裏アカ女子 #中2</p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search ==='裏アカjk') {
+
+                    document.getElementById("tweet1").innerHTML="<p>りりか @Mwdfgdgbdfvhi<br>裏アカあじめてする。<br>取り敢えずフォロワーほしいからフォロリツしてDM来て<br>#裏アカ女子 #裏アカJK<br>裏アカ男子と繋がりたい<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>Rena @Rena_f4<br>✓Off paco in Novenmber❆<br>[〆切] 11/17 23:59まで<br>[応募方法] (いいね＆RT) ×3<br>①このツイート②写真付きツイート×2にいいね＆RTしてくださった方の中から、<br>抽選と私の主観で選ばせていただきます。<br>募集人数は未定で、オフパコ日程は11月中旬～12月初旬をよていしてます<br>#裏アカjk #裏アカ女子<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>のんの @nonnonnemu1<br>復活記念㊗<br>見せ合いしたーい！<br>いいねしたひとからお迎えする～<br>#裏アカ女子 #裏アカJK<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="みるきー @MCanzume<br>えちなJKはお嫌いですか❓<br>誰かお話しよ...<br>ふぉろーといいねくれた人とする！！<br>DMいくよ！！<br>#裏アカJK #裏アカ男子と繋がりたい #裏アカさんと繋がりたい<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="まー @XaY9zx<br>久しぶりに浮上しました💛<br>#裏垢jk #裏アカjk<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search ==='裏アカjd') {
+
+                    document.getElementById("tweet1").innerHTML="<p>まいちゃ @0526_mai<br>初めましてまいちゃです！！<br>えっちぃ垢始めましたヾ(＠⌒ー⌒＠)ノ💛<br>ねえ、かまって？？<br>ふぉろりつくれたら絡みに行くね💛<br>#裏アカ女子 #裏アカJD<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>なれのはてちゃん @SSksk00<br>お話相手ほしいのです！<br>お話ししたい！<br>えっちな話も大歓迎( ´艸｀)<br>ふぉろーRTくれたらお相手決めてDMいきます！<br>#裏アカ女子 #裏アカJD #雰囲気嫌いじゃないよって人いいね<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>こむぎ @komugiii1<br>凍結から転生しました<br>誰かおそってくれますか。。。？<br>#裏アカJD #裏アカ男子と繋がりたい<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>あゆ @Sn8lm<br>つ、疲れた(*´Д｀)レポート手伝ってくれる心優しい方を募集してます<br>#裏アカ女子 #裏アカjd<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>ちょん @uraDJ_<br>学校めんどいー<br>お金欲しいー<br>#裏アカJK #裏アカJD<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+
+                }
+                else if (search ==='無修整') {
+
+                    document.getElementById("tweet1").innerHTML="<p>葉月 寝落ち @rowjoeb<br>#せフレ募集<br>無修整<br>えち絡みもしたい気分です(*'ω'*)<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>京香 @grhtmntrh<br>無修整動画ほしいひときて<br>優しい彼氏が欲しい(*´ω｀)<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>ほりけんけんけん @Horiii5383<br>俺は無修整派なんだよ！<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>帆風 @ntrthtbebe<br>〇〇してみた<br>マッチングアプリ 加工　動画<br>無修整見てみたい？<br>見たい人はここからー<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>楓 見せ合い @nrthsddvergr<br>暇だったらどっちかみたい人いますかね？<br>〇〇〇動画<br>無修整<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                }
+                else if (search ==='オフパコ募') {
+                    document.getElementById("tweet1").innerHTML="<p>み ほ。＠裏アカ女子裏垢オフパコ募集 @ZaraFraser7<br>164cm/Hカップ<br>♡お昼寝が好き<br>QRからきてね💛<br>めんどくさいと思うけどごめんね<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>みずき @mizuki8888777<br>23歳カフェ店員で、見た目は身長157cm普通体系Dカップのきれい系です♪<br>彼氏と別れてからHなことが全然できてないので、オフパコの相手を探してます💛<br>応募条件<br>・優しい方（見た目は気にしません）<br>・RT＋いいね＋フォローの３点セット<br>#裏アカ女子<br>#裏アカ男子と繋がりたい<br>#自撮り女子<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>あい＠オフパコ募集 @ai0958<br>私でもいいって人は連絡ください<br>詳しくはプロフ確認して<br>生まれ：犬山市<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>望美＠オフパコ募集 エロ垢 募集 @Nozomi0814<br>慰めてくださる人はメッセージください<br>大丈夫な人はPROF見て<br>生まれた場所：近江八幡市<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>うずき＊えろ垢♡裏垢 @8HJS8BluVyVBiGy<br>高円寺いるー<br>オフパコどうですか？<br>ドM女子<br>オフパコ<br>グラドル自撮り部<br>ライブ放送<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+
+                }
+                else if (search ==='おふパコ') {
+
+                    document.getElementById("tweet1").innerHTML="<p>サラ♡セフレ＿募集中 @ththjotj4989<br>おふパコ頑張りました♡<br>せフレ募集中〇<br>見た目とかじゃなく優しくしてくれる人〇<br>よろしくお願いします<br>気に入った人はこのツイートに<br>・いいね<br>・RT<br>確認次第DMいきます！！<br>フォローしてくれたら確実です♡<br>#オフショ #裏あか女子<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>穂 おふパコ募集 @oykeekyk5201<br>でも私にだけよ。<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>あ＠固ツイ参照 @DasnDcUeVzvFYs4<br>#裏アカ女子と繋がりたい<br>#オフぱこ<br>#おふパコ<br>三重で<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>たーた @Tx10zWOJEx21JLv<br>神奈川か東京でセフレになって頂ける女性を募集します。<br>年齢は20代～40代<br>1回限りでも構いません。<br>お互いの性欲を満たしませんか？<br>DMお待ちしております。<br>条件がありましたら連絡してください。<br>楽しみませんか？<br>#神奈川 #都内 #東京<br>#裏アカ #おふパコ #サポ<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>Rumi 裏アカだよん @rumi87996980<br>まだ予定空いてるからおふパコしよ～<br>もうおもちゃで遊ぶの飽きちゃった(笑)<br>オフぱこ募集 #裏アカ女子大生<br>#彼氏募集中<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+
+                }
+                else if (search ==='セフ募') {
+
+                    document.getElementById("tweet1").innerHTML="<p>◎にじゅう◎ @DignaMaltlb<br>いい人いましたら出会いたいです。<br>どんな関係かはおまかせします(笑)<br>#裏アカ男子と繋がりたい<br>#セフ募<br>#都内<br>#東京<br>#裏アカJD<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>るる＠東京 @gbrtbetohkoi0425<br>ニートなので出逢いがありません。<br>ニートなので、遊ぶ友達もいません。<br>ニートなので性欲を発散させる手段がありません<br>だから#セフ募的なことをしてます。<br>会いたいなって思ったら<br>ふぉろ・RT・DMをもらえると反応しやすいです。<br>見た目・年齢不問です！<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>みづき @midumizuki2020<br>はじめてで緊張しちゃうけど<br>都内学生です(*´ω｀)<br>最近彼氏と別れちゃって寂しいです、、、、<br>誰か慰めエッチしてくれる方募集中です(´Д⊂ヽ<br>#オフぱこ募集<br>#裏アカ男子と繋がりたい<br>#裏アカ女子と繋がりたい<br>#セフ募<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>みく@平日会える人募集垢 @ynrnroejwoe04820<br>都内で会える人を募集中です<br>11月18日 15時～20時位<br>11月19日 11時～18時位<br>11月20日 11時～20時位<br>の日程で会える人はフォローいいねリツイートして連絡ください<br>性格はマイペースですけど、<br>ちゃんと返事くれた人には返信していきます<br>#セフ募<br>Hに関しては早いです<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>一花@セフ募垢 @tuotnko2020<br>君を想っていられる<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+
+                }
+                else if (search ==='ソフレ募集') {
+
+                    document.getElementById("tweet1").innerHTML="<p>なっとうちゃん @Nattouuu<br>北関東です<br>寂しいです(´;ω;｀)<br>#ソフレ募集<br></p>"  + '<button id="heart1" type="submit" onClick="heart1click()"><img src="hart.png" width="20" height="20"></button><button id="ritu1" type="submit" onClick="ritu1click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet2").innerHTML="<p>K @k_nekojarashi<br>寂しさ埋めるだけの関係でええんよ<br>ほんと<br>#ソフレ募集 #ソフレ<br></p>"  + '<button id="heart2" type="submit" onClick="heart2click()"><img src="hart.png" width="20" height="20"></button><button id="ritu2" type="submit" onClick="ritu2click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet3").innerHTML="<p>多々良 @6gntntfbsdrb<br>近くにソフレになりたい！って子いないかなぁ～？<br>#ソフレ募集 #ハグフレ #キスフレ<br></p>"  + '<button id="heart3" type="submit" onClick="heart3click()"><img src="hart.png" width="20" height="20"></button><button id="ritu3" type="submit" onClick="ritu3click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet4").innerHTML="<p>暇人モデルdmド変態 @ntnbbgfnbberi<br>よろぴく(⋈◍＞◡＜◍)。✧♡<br>えちムビ撮ったどー♪<br>無修正でほしい人はLINE待ってる♪<br>高校生<br>ぇち垢<br>拡散希望<br>ソフレ募集垢<br>岩〇〇〇<br>youtube<br></p>"  + '<button id="heart4" type="submit" onClick="heart4click()"><img src="hart.png" width="20" height="20"></button><button id="ritu4" type="submit" onClick="ritu4click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+                    document.getElementById("tweet5").innerHTML="<p>たん @tatsu0812ta<br>人肌恋しい季節ですね<br>誰か隣にいてほしい<br>#千葉 #ソフレ #ソフレ募集 #ソフレ募集中<br>#裏アカ女子とつながりたい<br><#裏アカ男子と繋がりたい<br>#裏アカさんと繋がりたい<br></p>"  + '<button id="heart5" type="submit" onClick="heart5click()"><img src="hart.png" width="20" height="20"></button><button id="ritu5" type="submit" onClick="ritu5click()"><img src="ritu.png" width="20" height="20"></button>' + "<hr>";
+
+
+                }
+                else {
+                    alert("隠語ページで学習した隠語を検索してください。")
+                }
+                return false;
+           };
+
+        function obscene() {
+            document.getElementById("obscene").style.display="block";
+            document.getElementById("drug").style.display="none";
+            document.getElementById("encounter").style.display="none";
+            document.getElementById("porn").style.display="none";
+        }
+
+        function drug() {
+            document.getElementById("drug").style.display="block";
+            document.getElementById("obscene").style.display="none";
+            document.getElementById("encounter").style.display="none";
+            document.getElementById("porn").style.display="none";
+        }
+
+        function encounter() {
+            document.getElementById("encounter").style.display="block";
+            document.getElementById("obscene").style.display="none";
+            document.getElementById("drug").style.display="none";
+            document.getElementById("porn").style.display="none";
+        }
+
+        function porn() {
+            document.getElementById("porn").style.display="block";
+            document.getElementById("obscene").style.display="none";
+            document.getElementById("drug").style.display="none";
+            document.getElementById("encounter").style.display="none";
+        }
+
+        function hyoji1() {
+            document.getElementById("web1").style.display="block";
+            document.getElementById("app1").style.display="none";
+        }
+
+        function hyoji2() {
+            document.getElementById("app1").style.display="block";
+            document.getElementById("web1").style.display="none";
+        }
+
+        function hihyoji() {
+            document.getElementById("web1").style.display="none";
+            document.getElementById("app1").style.display="none";
+        }
+
+        function hyoji3() {
+            document.getElementById("web2").style.display="block";
+            document.getElementById("app2").style.display="none";
+        }
+
+        function hyoji4() {
+            document.getElementById("app2").style.display="block";
+            document.getElementById("web2").style.display="none";
+        }
+
+        function hihyoji1() {
+            document.getElementById("web2").style.display="none";
+            document.getElementById("app2").style.display="none";
+        }
+
+        function hyoji5() {
+            document.getElementById("web3").style.display="block";
+            document.getElementById("app3").style.display="none";
+        }
+
+        function hyoji6() {
+            document.getElementById("app3").style.display="block";
+            document.getElementById("web3").style.display="none";
+        }
+
+        function hihyoji2() {
+            document.getElementById("web3").style.display="none";
+            document.getElementById("app3").style.display="none";
+        }
+
+        function hyoji7() {
+            document.getElementById("web").style.display="block";
+            document.getElementById("app").style.display="none";
+        }
+
+        function hyoji8() {
+            document.getElementById("app").style.display="block";
+            document.getElementById("web").style.display="none";
+        }
+
+        function hihyoji3() {
+            document.getElementById("web").style.display="none";
+            document.getElementById("app").style.display="none";
+        }
+
+        function reportclick() {
+            location.href = 'paseudo3.html';
+        }
+
+        </script>
+
+    </body>
+</html>

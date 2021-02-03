@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>通報</title>
+        <link rel="stylesheet" type="text/css" href="paseudo3.css">
+    </head>
+        <body>
+
+            <h1>通報完了後画面</h1>
+            <ul>
+            <li>通報にご協力ありがとうございました。</li>
+            </ul>
+
+            <div id="results"></div>
+            <div id="times"></div>
+
+        <script>
+            var rand = Math.floor(Math.random() * 1000000) + 1;
+            var now = new Date();
+            var year = now.getFullYear();
+            var mon = now.getMonth()+1;
+            var day = now.getDate();
+            var hour = now.getHours();
+            var min = now.getMinutes();
+            var sec = now.getSeconds();
+
+            document.getElementById("times").innerHTML = "<p>通報時刻：" + "<mark>" + year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒" + "</mark></p>";
+            document.getElementById("results").innerHTML = "<P>通報番号：" +"<mark>" + rand + "</mark></p>";
+        </script>
+        </body>
+
+        <form>
+            <input type="button" value="検索・通報用画面に戻る" onClick="history.back()">
+        </form>
+
+        </html>
