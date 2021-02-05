@@ -8,12 +8,17 @@
         <body>
 
             <h1>通報完了後画面</h1>
+            <h3>注意：この画面が出た場合、ブラウザを閉じないでください。</h3>
+
             <ul>
             <li>通報にご協力ありがとうございました。</li>
             </ul>
 
             <div id="results"></div>
             <div id="times"></div>
+            <h2>・詳細情報 (最大400文字)</h2>
+                        <textarea id="details" name="details" rows="10" cols="400"></textarea>
+
 
         <script>
             var rand = Math.floor(Math.random() * 1000000) + 1;
@@ -27,6 +32,7 @@
 
             document.getElementById("times").innerHTML = "<p>通報時刻：" + "<mark>" + year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒" + "</mark></p>";
             document.getElementById("results").innerHTML = "<P>通報番号：" +"<mark>" + rand + "</mark></p>";
+            document.getElementById("details").value = localStorage.getItem('key');
         </script>
         </body>
 

@@ -16,3 +16,12 @@ h1:after {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
+p {
+    font-size: large;
+}
+
+h3 {
+    color: red;
+    font-size: x-large;
+}
