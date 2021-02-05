@@ -59,7 +59,7 @@
                     <div id="web1" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
                     <div id="app1" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
                     <h3>・詳細情報 (最大400文字)</h3>
-                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <textarea id="details1" name="details" rows="10" cols="400"></textarea>
                         <hr>
                     <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
                         <p>
@@ -68,7 +68,7 @@
                             所属：<input type="text" name="paffiliation"><br>
                         </p>
                         <hr>
-                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <button id="report" type="submit" onClick="reportclick1()">通報する</button>
                         <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
                                                        ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
                                                        ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
@@ -91,7 +91,7 @@
                     <div id="web2" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
                     <div id="app2" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
                     <h3>・詳細情報 (最大400文字)</h3>
-                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <textarea id="details2" name="details" rows="10" cols="400"></textarea>
                         <hr>
                     <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
                         <p>
@@ -100,7 +100,7 @@
                             所属：<input type="text" name="paffiliation"><br>
                         </p>
                         <hr>
-                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <button id="report" type="submit" onClick="reportclick2()">通報する</button>
                         <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
                                                        ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
                                                        ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
@@ -124,7 +124,7 @@
                     <div id="web3" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
                     <div id="app3" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
                     <h3>・詳細情報 (最大400文字)</h3>
-                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <textarea  id="details3" name="details" rows="10" cols="400"></textarea>
                         <hr>
                     <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
                         <p>
@@ -133,7 +133,7 @@
                             所属：<input type="text" name="paffiliation"><br>
                         </p>
                         <hr>
-                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <button id="report" type="submit" onClick="reportclick3()">通報する</button>
                         <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
                                                        ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
                                                        ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
@@ -156,7 +156,7 @@
                     <div id="web" style="display:none"><h3>ウェブページのURL<span> (必須)</span></h3><input type="text" name="web1"></div>
                     <div id="app" style="display:none"><h3>アプリの名称<span> (必須)</span></h3><input type="text" name="app1"></div>
                     <h3>・詳細情報 (最大400文字)</h3>
-                        <textarea name="details" rows="10" cols="400"></textarea>
+                        <textarea id="details4" name="details" rows="10" cols="400"></textarea>
                         <hr>
                     <h3>・連絡先 (匿名で通報する場合は、この項目に入力する必要はありません。）</h3>
                         <p>
@@ -165,7 +165,7 @@
                             所属：<input type="text" name="paffiliation"><br>
                         </p>
                         <hr>
-                        <button id="report" type="submit" onClick="reportclick()">通報する</button>
+                        <button id="report" type="submit" onClick="reportclick4()">通報する</button>
                         <p><strong>注意:</strong><span>・殺人・爆破・自殺予告など緊急に対応が必要な情報は、警察に110番通報してください。</span><br>
                                                        ・詐欺、不正アクセス、脅迫などの被害相談は最寄りの警察へ。<br>
                                                        ・名誉棄損、プライバシー侵害のご相談は法務省インターネット人権相談窓口へ。
@@ -551,7 +551,27 @@
             document.getElementById("app").style.display="none";
         }
 
-        function reportclick() {
+        function reportclick1() {
+            const details = document.getElementById("details1").value;
+            localStorage.setItem('key',details);
+            location.href = 'paseudo3.html';
+        }
+
+        function reportclick2() {
+            const details = document.getElementById("details2").value;
+            localStorage.setItem('key',details);
+            location.href = 'paseudo3.html';
+        }
+
+        function reportclick3() {
+            const details = document.getElementById("details3").value;
+            localStorage.setItem('key',details);
+            location.href = 'paseudo3.html';
+        }
+
+        function reportclick4() {
+            const details = document.getElementById("details4").value;
+            localStorage.setItem('key',details);
             location.href = 'paseudo3.html';
         }
 
